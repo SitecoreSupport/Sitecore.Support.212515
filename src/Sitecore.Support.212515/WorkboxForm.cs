@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Sitecore.Shell.Applications.Workbox
+namespace Sitecore.Support.Shell.Applications.Workbox
 {
   using System;
   using System.Collections;
@@ -791,10 +791,7 @@ namespace Sitecore.Shell.Applications.Workbox
         }
       }
 
-      // Relative URL was causing 'malformed URI' exceptions in the browser when set from certain postbacks (workflow command with UI action)
-      var fullUrl = WebUtil.GetFullUrl(url.ToString());
-
-      Context.ClientPage.ClientResponse.SetLocation(fullUrl);
+      Context.ClientPage.ClientResponse.SetLocation(url.ToString());
     }
 
     /// <summary>
